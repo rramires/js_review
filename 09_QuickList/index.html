@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickList - Compras da semana</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBmaWxsPSIjQ0EzODg0Ii8+Cjwvc3ZnPg==">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="assets/logo.svg" alt="">
+            </div>
+        </header>
+
+        <!-- Add Item Section -->
+        <section class="add-item-section">
+            <form class="add-item-form" id="addItemForm">
+                <input 
+                    type="text" 
+                    class="input add-item-input" 
+                    id="itemInput"
+                    placeholder="Adicione um novo item"
+                    required
+                >
+                <button type="submit" class="btn btn-primary">
+                    Adicionar item
+                </button>
+            </form>
+        </section>
+
+        <!-- List Section -->
+        <section class="list-section">
+            <ul class="list-items" id="listItems">
+                <!-- Default items -->
+                <li class="list-item">
+                    <div class="checkbox-item">
+                        <input type="checkbox" class="checkbox" id="item-1">
+                        <label class="checkbox-label" for="item-1">Pão de forma</label>
+                        <button class="delete-btn" aria-label="Remover item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
+                
+            </ul>
+            
+            <!-- Alert Message -->
+            <div class="alert alert-danger">
+                <span>O item foi removido da lista</span>
+                <button class="alert-close" aria-label="Fechar alerta">&times;</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

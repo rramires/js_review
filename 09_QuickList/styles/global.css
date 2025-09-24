@@ -1,0 +1,106 @@
+/* QuickList - Global Styles and Variables */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Typography */
+  --font-family: 'Inter', sans-serif;
+  
+  /* Font Sizes */
+  --font-size-title: 24px;
+  --font-size-label: 16px;
+  --font-size-paragraph: 16px;
+  --font-size-link: 14px;
+  
+  /* Font Weights */
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  
+  /* Line Heights */
+  --line-height-title: 32px;
+  --line-height-label: 20px;
+  --line-height-paragraph: 20px;
+  --line-height-link: 16px;
+  
+  /* Colors - Background */
+  --color-bg-primary: #F4F5FB;
+  --color-bg-secondary: #FFFFFF;
+  
+  /* Colors - Brand */
+  --color-brand: #CA3884;
+  --color-brand-hover: #A52C6B;
+  --color-brand-danger: #C93847;
+  
+  /* Colors - Content */
+  --color-content-primary: #080812;
+  --color-content-secondary: #374151;
+  --color-content-tertiary: #9CA3AF;
+  --color-content-white: #FFFFFF;
+  
+  /* Colors - Border */
+  --color-border-primary: #D1D5DB;
+  --color-border-hover: #B9C2D0;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-paragraph);
+  line-height: var(--line-height-paragraph);
+  color: var(--color-content-primary);
+  background-color: var(--color-bg-primary);
+  font-weight: var(--font-weight-regular);
+}
+
+/* Typography Classes */
+.title {
+  font-size: var(--font-size-title);
+  line-height: var(--line-height-title);
+  font-weight: var(--font-weight-bold);
+}
+
+.label {
+  font-size: var(--font-size-label);
+  line-height: var(--line-height-label);
+  font-weight: var(--font-weight-semibold);
+}
+
+.paragraph {
+  font-size: var(--font-size-paragraph);
+  line-height: var(--line-height-paragraph);
+  font-weight: var(--font-weight-medium);
+}
+
+.link {
+  font-size: var(--font-size-link);
+  line-height: var(--line-height-link);
+  font-weight: var(--font-weight-medium);
+}
