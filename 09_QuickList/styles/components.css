@@ -5,7 +5,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
   border: none;
   border-radius: var(--border-radius-md);
   font-family: var(--font-family);
@@ -34,7 +34,7 @@
 /* Input Component */
 .input {
   width: 100%;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   border: 1px solid var(--color-border-primary);
   border-radius: var(--border-radius-md);
   font-family: var(--font-family);
@@ -46,7 +46,7 @@
 .input:focus {
   outline: none;
   border-color: var(--color-brand);
-  box-shadow: 0 0 0 3px rgba(202, 56, 132, 0.1);
+  box-shadow: 0 0 0 0.1875rem rgba(202, 56, 132, 0.1);
 }
 
 .input::placeholder {
@@ -57,7 +57,7 @@
 .checkbox-item {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 1rem;
   background-color: var(--color-bg-secondary);
   border-radius: var(--border-radius-md);
   margin-bottom: var(--spacing-sm);
@@ -72,9 +72,9 @@
 
 .checkbox {
   appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--color-border-primary);
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.125rem solid var(--color-border-primary);
   border-radius: var(--border-radius-sm);
   margin-right: var(--spacing-md);
   cursor: pointer;
@@ -94,7 +94,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 
@@ -103,9 +103,11 @@
   font-size: var(--font-size-paragraph);
   color: var(--color-content-primary);
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
-.checkbox-item.completed .checkbox-label {
+/* CSS-only functionality: when checkbox is checked, add strikethrough */
+.checkbox:checked + .checkbox-label {
   text-decoration: line-through;
   color: var(--color-content-tertiary);
 }
@@ -115,20 +117,33 @@
   border: none;
   color: var(--color-content-tertiary);
   cursor: pointer;
-  padding: 4px;
+  padding: 0.25rem;
   border-radius: var(--border-radius-sm);
-  transition: color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.delete-btn img {
+  width: 1rem;
+  height: 1rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .delete-btn:hover {
   color: var(--color-brand-danger);
+  background-color: rgba(156, 163, 175, 0.15);
+  transform: translateY(-0.0625rem);
+}
+
+.delete-btn:active {
+  transform: translateY(0);
 }
 
 /* Alert Component */
 .alert {
   display: flex;
+  /* display: none; */
   align-items: center;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   border-radius: var(--border-radius-md);
   margin: var(--spacing-md) 0;
   position: relative;
@@ -140,34 +155,58 @@
   border: 1px solid rgba(201, 56, 71, 0.2);
 }
 
+.show-danger {
+  display: flex;
+}
+
 .alert-close {
   background: none;
   border: none;
   color: inherit;
   cursor: pointer;
   margin-left: auto;
-  padding: 0;
-  font-size: 18px;
+  padding: 0.25rem;
+  font-size: 1.125rem;
   line-height: 1;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s ease-in-out;
 }
 
-/* Back Link */
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  color: var(--color-brand);
-  text-decoration: none;
-  font-size: var(--font-size-link);
-  font-weight: var(--font-weight-medium);
-  margin-bottom: var(--spacing-lg);
-  transition: color 0.2s ease-in-out;
+.alert-close:hover {
+  background-color: rgba(201, 56, 71, 0.15);
+  transform: translateY(-0.0625rem);
 }
 
-.back-link:hover {
-  color: var(--color-brand-hover);
+.alert-close:active {
+  transform: translateY(0);
 }
 
-.back-link::before {
-  content: '←';
-  margin-right: var(--spacing-sm);
+/* Responsive Design */
+@media (max-width: 48rem) {
+  .container {
+    padding: var(--spacing-md);
+  }
+  
+  .add-item-form {
+    flex-direction: column;
+  }
+  
+  .checkbox-item {
+    padding: 0.75rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .container {
+    padding: var(--spacing-sm);
+  }
+  
+  .header {
+    margin-bottom: var(--spacing-lg);
+  }
 }

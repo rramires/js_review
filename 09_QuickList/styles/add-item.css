@@ -1,0 +1,16 @@
+/* QuickList - Add Item Section Styles */
+
+/* Add Item Section */
+.add-item-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.add-item-form {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.add-item-input {
+  flex: 1;
+}
