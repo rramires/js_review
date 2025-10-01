@@ -140,8 +140,8 @@
 
 /* Alert Component */
 .alert {
-  display: flex;
-  /* display: none; */
+  /* display: flex; */
+  display: none;
   align-items: center;
   padding: 0.75rem 1rem;
   border-radius: var(--border-radius-md);

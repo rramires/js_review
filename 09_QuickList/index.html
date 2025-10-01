@@ -27,7 +27,7 @@
                     class="input add-item-input" 
                     id="itemInput"
                     placeholder="Adicione um novo item"
-                    required
+                    
                 >
                 <button type="submit" class="btn btn-primary">
                     Adicionar item
@@ -38,25 +38,25 @@
         <!-- List Section -->
         <section class="list-section">
             <ul class="list-items" id="listItems">
-                <!-- List items -->
-                <li class="list-item" id="item-1">
+                <!-- List items - template -->
+                <!-- <li class="list-item" id="item-1">
                     <div class="checkbox-item">
                         <input type="checkbox" class="checkbox" id="checkbox-1">
                         <label class="checkbox-label" for="checkbox-1">Pão de forma</label>
-                        <button class="delete-btn" aria-label="Remover item">
+                        <button class="delete-btn" aria-label="Remover item" onclick="deleteItem(event)">
                             <img src="assets/delete-icon.svg" alt="">
                         </button>
                     </div>
-                </li>
-                
+                </li> -->
             </ul>
             
             <!-- Alert Message -->
-            <div class="alert alert-danger">
+            <div id="alertDanger" class="alert alert-danger">
                 <span>O item foi removido da lista</span>
-                <button class="alert-close" aria-label="Fechar alerta">&times;</button>
+                <button class="alert-close" aria-label="Fechar alerta" onclick="hideDanger()">&times;</button>
             </div>
         </section>
     </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
