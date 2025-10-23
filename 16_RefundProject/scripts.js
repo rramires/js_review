@@ -21,6 +21,14 @@ refundForm.addEventListener('submit', (event) => {
     addExpense()
 })
 
+expenseList.addEventListener('click', (event) => {
+    if(event.target.classList.contains('remove-icon')) {
+        const item = event.target.closest('.expense')
+        item.remove()
+    }
+    updateTotals()
+})
+
 // functions
 function formatCurrencyBRL(value) {
     // converte para string
