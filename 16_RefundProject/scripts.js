@@ -19,6 +19,7 @@ refundForm.addEventListener('submit', (event) => {
     event.preventDefault()
     //console.log(newExpense)
     addExpense()
+    resetForm()
 })
 
 expenseList.addEventListener('click', (event) => {
@@ -124,6 +125,11 @@ try {
         alert('Não foi possível atualizar os totais!')
         console.log(error)
     }
+}
+
+function resetForm(){
+    refundForm.reset()
+    expenseInput.focus()
 }
 
 
