@@ -4,6 +4,9 @@ const refundForm = document.getElementById('refund')
 const expenseInput = document.getElementById('expense')
 const categorySelect = document.getElementById('category')
 const amountInput = document.getElementById('amount')
+const totalItens = document.getElementById('totalItens')
+const totalExpenses = document.getElementById('totalExpenses')
+
 
 // Listners
 amountInput.addEventListener('input', (event) => { 
@@ -20,6 +23,8 @@ refundForm.addEventListener('submit', (event) => {
 
 // functions
 function formatCurrencyBRL(value) {
+    // converte para string
+    value = value.toString()
     // somente números
     value = value.replace(/\D/g, '')
     // converte para number e adiciona 2 casas
@@ -80,8 +85,37 @@ function addExpense(){
         alert('Não foi possível adicionar a despesa!')
         console.log(error)
     }
+
+    updateTotals()
 }
 
+function updateTotals(){
 
+try {
+    const itens = expenseList.children
+
+    totalItens.textContent = `${itens.length} ${itens.length > 1 ? 'despesas': 'despesa'}`
+
+    let total = 0
+
+    for(let i = 0 ; i < itens.length ; i++){
+        const itemAmount = itens[i].querySelector('.expense-amount')
+
+        let value = itemAmount.textContent.replace(/[^\d]/g, '').replace(',', '.')
+        value = parseFloat(value)
+
+        if(isNaN(value)){
+            alert('Não foi possível calcular o total!')
+        }
+        total += value
+    }
+
+    totalExpenses.innerHTML = `${formatCurrencyBRL(total).toUpperCase().replace('R$', '<small>R$</small>')}`
+    
+    } catch (error) {
+        alert('Não foi possível atualizar os totais!')
+        console.log(error)
+    }
+}
 
 
