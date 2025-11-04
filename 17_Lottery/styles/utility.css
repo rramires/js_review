@@ -1,0 +1,57 @@
+/* Utility Classes */
+
+.hidden {
+    display: none !important;
+}
+
+.show {
+    display: block;
+}
+
+.show-flex {
+    display: flex;
+}
+
+.show-grid {
+    display: grid;
+}
+
+/* Content Toggle */
+.form-section {
+    display: block;
+}
+
+.result-section {
+    display: none;
+}
+
+/* Add .show-result class to main to swap views */
+.show-result {
+    & .form-section {
+        display: none;
+    }
+
+    & .result-section {
+        display: grid;
+    }
+}
+
+/* Animation Trigger Classes */
+.animate-number {
+    animation: spin-reveal 3s ease-in-out forwards;
+}
+
+@keyframes spin-reveal {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(180deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
