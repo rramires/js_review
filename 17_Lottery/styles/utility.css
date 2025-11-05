@@ -38,7 +38,7 @@
 
 /* Animation Trigger Classes */
 .animate-number {
-    animation: spin-reveal 3s ease-in-out forwards;
+    animation: spin-reveal 1s ease-in-out forwards;
 }
 
 @keyframes spin-reveal {

@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Numbers - Sorteador de Números</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@800&family=Roboto+Mono:wght@700&family=Roboto+Flex:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
@@ -43,29 +49,29 @@
                 <h2 class="section-title">Quero Sortear:</h2>
                 <p class="section-subtitle">Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
 
-                <form id="sorteador-form">
+                <form id="lottery_form">
                     <div class="form-group">
                         <div class="form-inputs-row">
                             <div class="form-field">
                                 <label class="form-label">Números</label>
-                                <input type="number" class="number-field" value="2" min="1" max="9999" aria-label="Quantidade de números">
+                                <input id="qty_input" type="number" class="number-field" value="2" min="1" max="9999" aria-label="Quantidade de números">
                             </div>
 
                             <div class="form-field">
                                 <label class="form-label">De</label>
-                                <input type="number" class="number-field" value="1" min="1" max="9999" aria-label="Número mínimo">
+                                <input id="min_input" type="number" class="number-field" value="1" min="1" max="9999" aria-label="Número mínimo">
                             </div>
 
                             <div class="form-field">
                                 <label class="form-label">Até</label>
-                                <input type="number" class="number-field" value="100" min="1" max="9999" aria-label="Número máximo">
+                                <input id="max_input" type="number" class="number-field" value="100" min="1" max="9999" aria-label="Número máximo">
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="toggle-wrapper">
-                            <input type="checkbox" id="no-repeat">
+                            <input id="no_repeat" type="checkbox" id="no-repeat">
                             <span class="toggle"></span>
                             <span class="toggle-label">Não repetir número</span>
                         </label>
@@ -82,12 +88,12 @@
             <div class="result-section">
                 <div class="result-header">
                     <h2 class="result-title">Resultado do Sorteio</h2>
-                    <p class="result-subtitle">1º Resultado</p>
                 </div>
 
                 <!-- Grid with results -->
-                <div class="result-grid">
+                <div id="result_grid" class="result-grid">
                     <div class="result-badge animate-number">23</div>
+                    <div class="result-badge animate-number">12</div>
                     <!-- <div class="result-badge">12</div>
                     <div class="result-badge">45</div>
                     <div class="result-badge">67</div>
@@ -95,12 +101,13 @@
                     <div class="result-badge">34</div>  -->
                 </div>
 
-                <button type="button" class="btn btn-secondary">
+                <button id="again_btn" type="button" class="btn btn-secondary">
                     Sortear Novamente
                     <img src="assets/icon-refresh.svg" alt="" class="icon">
                 </button>
             </div>
         </section>
     </main>
+    <script src="scripts.js"></script>
 </body>
 </html>
